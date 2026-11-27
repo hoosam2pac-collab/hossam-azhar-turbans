@@ -7,7 +7,7 @@
     <style>
         :root { --primary: #0f3d2e; --gold: #c59d5f; --bg: #f8f6f0; --white: #ffffff; --text: #222222; }
         * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; }
-        body { background-color: var(--bg); color: var(--text); }
+        body { background-color: var(--bg); color: var(--text); padding-bottom: 60px; }
         header { background: linear-gradient(135deg, var(--primary), #185a44); color: var(--white); padding: 28px 18px; text-align: center; border-bottom: 4px solid var(--gold); }
         header h1 { font-size: 28px; margin-bottom: 8px; color: var(--gold); }
         header p { font-size: 15px; max-width: 750px; margin: 0 auto 12px; line-height: 1.6; }
@@ -31,19 +31,26 @@
         .card-desc { font-size: 13px; color: #555; margin-bottom: 10px; line-height: 1.5; }
         .price { font-size: 19px; font-weight: bold; color: #b0833e; margin-bottom: 4px; }
         .wholesale-tag { font-size: 12px; color: #0f3d2e; background: #e8f3ef; padding: 3px 8px; border-radius: 5px; display: inline-block; margin-bottom: 10px; font-weight: bold; }
-        select, input, textarea { width: 100%; padding: 9px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px; }
-        .btn { width: 100%; padding: 11px; background: var(--primary); color: var(--white); border: none; border-radius: 8px; font-size: 15px; font-weight: bold; cursor: pointer; }
+        select, input, textarea { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px; }
+        .btn { width: 100%; padding: 11px; background: var(--primary); color: var(--white); border: none; border-radius: 8px; font-size: 15px; font-weight: bold; cursor: pointer; transition: 0.2s; }
         .btn:hover { background: #185a44; }
-        .cart-section { background: var(--white); margin-top: 40px; padding: 22px; border-radius: 14px; border: 2px solid var(--gold); }
-        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #eee; }
-        .remove-btn { background: #d9534f; color: white; border: none; padding: 4px 10px; border-radius: 6px; cursor: pointer; }
-        .total { font-size: 20px; font-weight: bold; color: var(--primary); margin: 14px 0; text-align: left; }
-        .policy-box { background: #fff8e6; border: 1px solid #f0d58c; color: #6b4f00; padding: 10px; border-radius: 8px; margin-bottom: 14px; font-size: 14px; font-weight: bold; }
-        .whatsapp-btn { background: #25D366; color: white; font-size: 17px; }
+        .cart-section { background: var(--white); margin-top: 40px; padding: 22px; border-radius: 14px; border: 2px solid var(--gold); box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
+        .cart-section h2 { color: var(--primary); margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; font-size: 15px; }
+        .remove-btn { background: #d9534f; color: white; border: none; padding: 5px 10px; border-radius: 6px; cursor: pointer; font-size: 13px; }
+        .total { font-size: 20px; font-weight: bold; color: var(--primary); margin: 16px 0; text-align: left; }
+        .policy-box { background: #fff8e6; border: 1px solid #f0d58c; color: #6b4f00; padding: 12px; border-radius: 8px; margin-bottom: 16px; font-size: 14px; font-weight: bold; }
+        .whatsapp-btn { background: #25D366; color: white; font-size: 17px; padding: 13px; }
+        .whatsapp-btn:hover { background: #1ebe5d; }
+        .floating-cart { position: fixed; bottom: 15px; left: 15px; background: var(--primary); color: var(--gold); border: 2px solid var(--gold); padding: 12px 20px; border-radius: 30px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 999; }
+        .toast { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #0f3d2e; color: #fff; padding: 12px 24px; border-radius: 8px; border: 2px solid var(--gold); font-weight: bold; display: none; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.2); }
         footer { text-align: center; padding: 20px; margin-top: 40px; background: var(--primary); color: white; font-size: 13px; line-height: 1.8; }
     </style>
 </head>
 <body>
+
+<div id="toast" class="toast">✅ تمت إضافة المنتج للسلة بنجاح!</div>
+<a href="#cart-area" class="floating-cart">🛒 السلة (<span id="cart-count">0</span>)</a>
 
 <header>
     <h1>حسام صنايعي عمم أزهرية</h1>
@@ -63,7 +70,7 @@
     <div class="wholesale-banner">
         <h2>✨ أسعار خاصة ومميزة لتجار الجملة والكميات ✨</h2>
         <p>تجهيز كامل للمعاهد الأزهرية، المساجد، فرق الإنشاد الديني، والمحلات التجارية بأسعار تصنيع خاصة للكميات.</p>
-        <a href="https://wa.me?text=السلام عليكم يا أستاذ حسام، كنت حابب أستفسر عن أسعار الجملة والكميات" target="_blank" class="wholesale-btn">📦 اطلب تسعيرة الجملة الآن عبر واتساب</a>
+        <a href="https://wa.me?text=السلام%20عليكم%20يا%20أستاذ%20حسام،%20كنت%20حابب%20أستفسر%20عن%20أسعار%20الجملة%20والكميات" target="_blank" class="wholesale-btn">📦 اطلب تسعيرة الجملة الآن عبر واتساب</a>
     </div>
 
     <h2 class="section-title">تشكيلة العمائم الأزهرية والطرابيش</h2>
@@ -74,10 +81,10 @@
             <div class="card-body">
                 <h3 class="card-title">طربوش أفندي بتاع زمان الأصلي</h3>
                 <p class="card-desc">طربوش أحمر كلاسيكي فاخر بتصميم تراثي أصيل ومتين.</p>
-                <div class="price">250 جنيه (قطاعي)</div>
+                <div class="price">600 جنيه (قطاعي)</div>
                 <span class="wholesale-tag">💼 متاح سعر خاص للجملة</span>
                 <select id="s1"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
-                <button class="btn" onclick="add('طربوش أفندي بتاع زمان الأصلي', 250, 's1')">+ أضف للسلة</button>
+                <button class="btn" onclick="add('طربوش أفندي بتاع زمان الأصلي', 600, 's1')">+ أضف للسلة</button>
             </div>
         </div>
 
@@ -112,21 +119,3 @@
                 <p class="card-desc">تفصيل يدوي متقن بشريط فضي وشاش أبيض ناصع للأئمة والقراء.</p>
                 <div class="price">750 جنيه (قطاعي)</div>
                 <span class="wholesale-tag">💼 متاح سعر خاص للجملة</span>
-                <select id="s4"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
-                <button class="btn" onclick="add('عمة أزهرية مطرزة فاخرة', 750, 's4')">+ أضف للسلة</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="IMG20250925161935.jpg" alt="عمة شاش مصري">
-            <div class="card-body">
-                <h3 class="card-title">عمة أزهرية شاش مصري فاخر</h3>
-                <p class="card-desc">مناسبة للاستخدام اليومي والمناسبات الرسمية بتهوية ممتازة.</p>
-                <div class="price">750 جنيه (قطاعي)</div>
-                <span class="wholesale-tag">💼 متاح سعر خاص للجملة</span>
-                <select id="s5"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
-                <button class="btn" onclick="add('عمة أزهرية شاش مصري فاخر', 750, 's5')">+ أضف للسلة</button>
-            </div>
-        </div>
-
-        <div class="card">
