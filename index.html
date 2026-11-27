@@ -1,211 +1,101 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حسام صنايعي عمم أزهرية</title>
-    <style>
-        :root { --primary: #0f3d2e; --gold: #c59d5f; --bg: #f8f6f0; --white: #ffffff; --text: #222222; }
-        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; }
-        body { background-color: var(--bg); color: var(--text); padding-bottom: 80px; }
-        header { background: linear-gradient(135deg, var(--primary), #185a44); color: var(--white); padding: 28px 18px; text-align: center; border-bottom: 4px solid var(--gold); }
-        header h1 { font-size: 28px; margin-bottom: 8px; color: var(--gold); }
-        header p { font-size: 15px; max-width: 750px; margin: 0 auto 12px; line-height: 1.6; }
-        .address-bar { background: rgba(255,255,255,0.12); border: 1px solid var(--gold); border-radius: 10px; padding: 10px 14px; max-width: 750px; margin: 12px auto 15px; font-size: 14px; line-height: 1.7; }
-        .shipping-note { color: #ffe082; font-weight: bold; display: block; margin-top: 4px; }
-        .badges { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-        .fb-badge, .wa-top-badge { display: inline-block; color: white; padding: 8px 16px; border-radius: 25px; text-decoration: none; font-size: 14px; font-weight: bold; }
-        .fb-badge { background: #1877f2; }
-        .wa-top-badge { background: #25D366; }
-        .container { max-width: 1150px; margin: 30px auto; padding: 0 15px; }
-        .wholesale-banner { background: linear-gradient(135deg, #fff9e6, #f5e6c4); border: 2px solid var(--gold); border-radius: 14px; padding: 20px; margin-bottom: 30px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
-        .wholesale-banner h2 { color: var(--primary); font-size: 22px; margin-bottom: 8px; }
-        .wholesale-banner p { color: #444; font-size: 15px; margin-bottom: 14px; line-height: 1.6; }
-        .wholesale-btn { display: inline-block; background: var(--primary); color: var(--gold); padding: 10px 22px; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 15px; border: 1px solid var(--gold); }
-        .section-title { text-align: center; font-size: 24px; color: var(--primary); margin-bottom: 22px; }
-        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
-        .card { background: var(--white); border-radius: 14px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.08); border: 1px solid #e5e0d5; display: flex; flex-direction: column; justify-content: space-between; }
-        .card img { width: 100%; height: 260px; object-fit: cover; display: block; border-bottom: 2px solid var(--gold); }
-        .card-body { padding: 16px; }
-        .card-title { font-size: 18px; color: var(--primary); margin-bottom: 6px; }
-        .card-desc { font-size: 13px; color: #555; margin-bottom: 10px; line-height: 1.5; }
-        .price { font-size: 19px; font-weight: bold; color: #b0833e; margin-bottom: 4px; }
-        .wholesale-tag { font-size: 12px; color: #0f3d2e; background: #e8f3ef; padding: 3px 8px; border-radius: 5px; display: inline-block; margin-bottom: 10px; font-weight: bold; }
-        select, input, textarea { width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px; }
-        .btn { width: 100%; padding: 12px; background: var(--primary); color: var(--white); border: none; border-radius: 8px; font-size: 15px; font-weight: bold; cursor: pointer; }
-        .btn:active { background: #185a44; }
-        .cart-section { background: var(--white); margin-top: 40px; padding: 22px; border-radius: 14px; border: 2px solid var(--gold); box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
-        .cart-section h2 { color: var(--primary); margin-bottom: 15px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
-        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; font-size: 15px; gap: 10px; }
-        .remove-btn { background: #d9534f; color: white; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 13px; }
-        .total { font-size: 20px; font-weight: bold; color: var(--primary); margin: 16px 0; text-align: left; }
-        .policy-box { background: #fff8e6; border: 1px solid #f0d58c; color: #6b4f00; padding: 12px; border-radius: 8px; margin-bottom: 16px; font-size: 14px; font-weight: bold; }
-        .whatsapp-btn { background: #25D366; color: white; font-size: 17px; padding: 14px; }
-        .floating-cart { position: fixed; bottom: 15px; left: 15px; background: var(--primary); color: var(--gold); border: 2px solid var(--gold); padding: 12px 20px; border-radius: 30px; font-weight: bold; text-decoration: none; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 999; font-size: 15px; }
-        .toast { position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: #0f3d2e; color: #fff; padding: 12px 24px; border-radius: 8px; border: 2px solid var(--gold); font-weight: bold; display: none; z-index: 1000; width: 90%; max-width: 350px; text-align: center; }
-        footer { text-align: center; padding: 20px; margin-top: 40px; background: var(--primary); color: white; font-size: 13px; line-height: 1.8; }
-    </style>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>حسام صنايعي عمم أزهرية</title>
+<style>
+:root{--p:#0f3d2e;--g:#c59d5f;--bg:#f8f6f0;--w:#fff}
+*{box-sizing:border-box;font-family:Tahoma,sans-serif;margin:0;padding:0}
+body{background:var(--bg);color:#222;padding-bottom:80px}
+header{background:linear-gradient(135deg,var(--p),#185a44);color:var(--w);padding:25px 15px;text-align:center;border-bottom:4px solid var(--g)}
+header h1{font-size:26px;color:var(--g);margin-bottom:8px}
+.addr{background:rgba(255,255,255,.12);border:1px solid var(--g);border-radius:10px;padding:10px;max-width:750px;margin:12px auto;font-size:14px}
+.wa-btn{display:inline-block;background:#25D366;color:#fff;padding:10px 20px;border-radius:25px;text-decoration:none;font-weight:bold;margin-top:8px;cursor:pointer;border:none;font-size:15px}
+.container{max-width:1100px;margin:25px auto;padding:0 15px}
+.box-j{background:#fff9e6;border:2px solid var(--g);border-radius:12px;padding:18px;margin-bottom:25px;text-align:center}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:var(--w);border-radius:12px;overflow:hidden;box-shadow:0 3px 10px rgba(0,0,0,.08);border:1px solid #e5e0d5}
+.card img{width:100%;height:240px;object-fit:cover;border-bottom:2px solid var(--g)}
+.cb{padding:15px}
+.cb h3{color:var(--p);font-size:17px;margin-bottom:5px}
+.pr{font-size:18px;font-weight:bold;color:#b0833e;margin:6px 0}
+select,input,textarea{width:100%;padding:10px;margin-bottom:10px;border:1px solid #ccc;border-radius:8px;font-size:14px}
+.btn{width:100%;padding:12px;background:var(--p);color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:bold;cursor:pointer}
+.cart{background:var(--w);margin-top:35px;padding:20px;border-radius:12px;border:2px solid var(--g)}
+.ci{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #eee}
+.del{background:#d9534f;color:#fff;border:none;padding:5px 10px;border-radius:5px;cursor:pointer}
+.tot{font-size:20px;font-weight:bold;color:var(--p);margin:15px 0}
+.fcart{position:fixed;bottom:15px;left:15px;background:var(--p);color:var(--g);border:2px solid var(--g);padding:12px 20px;border-radius:30px;font-weight:bold;text-decoration:none;z-index:999}
+.toast{position:fixed;top:20px;left:50%;transform:translateX(-50%);background:var(--p);color:#fff;padding:12px 22px;border-radius:8px;border:2px solid var(--g);display:none;z-index:1000}
+</style>
 </head>
 <body>
-<div id="toast" class="toast">✅ تمت إضافة المنتج للسلة بنجاح!</div>
-<a href="#cart-area" class="floating-cart">🛒 السلة (<span id="cart-count">0</span>)</a>
+<div id="toast" class="toast">✅ تمت الإضافة للسلة!</div>
+<a href="#c-area" class="fcart">🛒 السلة (<span id="cnt">0</span>)</a>
 <header>
-    <h1>حسام صنايعي عمم أزهرية</h1>
-    <p>تصنيع العمة الأزهرية للأئمة والخطباء والقراء والمنشدين وطربوش أفندي بتاع زمان — شغل يدوي متقن بأجود الخامات وأدق المقاسات</p>
-    <div class="address-bar">
-        📍 <strong>العنوان:</strong> القاهرة - 130 جوهر القائد، أمام كلية شريعة وقانون، بجانب مطعم الهواري
-        <span class="shipping-note">🚚 يوجد شحن لجميع محافظات مصر بعد سداد حق المنتج</span>
-    </div>
-    <div class="badges">
-        <a href="https://facebook.com" target="_blank" class="fb-badge">صفحتنا على فيسبوك (7000+ متابع)</a>
-        <a href="https://whatsapp.com" target="_blank" class="wa-top-badge">تواصل واتساب: 01126565191</a>
-    </div>
+<h1>حسام صنايعي عمم أزهرية</h1>
+<p>تصنيع العمة الأزهرية وطربوش أفندي بتاع زمان — شغل يدوي متقن</p>
+<div class="addr">📍 القاهرة - 130 جوهر القائد، أمام كلية شريعة وقانون، بجانب مطعم الهواري<br>🚚 شحن لجميع المحافظات بعد سداد قيمة المنتج</div>
+<button class="wa-btn" onclick="openWA('السلام عليكم يا أستاذ حسام، استفسار من المتجر')">📲 تواصل واتساب: 01126565191</button>
 </header>
 <div class="container">
-    <div class="wholesale-banner">
-        <h2>✨ أسعار خاصة ومميزة لتجار الجملة والكميات ✨</h2>
-        <p>تجهيز كامل للمعاهد الأزهرية، المساجد، فرق الإنشاد الديني، والمحلات التجارية بأسعار تصنيع خاصة للكميات.</p>
-        <a href="https://whatsapp.com&text=السلام%20عليكم%20يا%20أستاذ%20حسام،%20كنت%20حابب%20أستفسر%20عن%20أسعار%20الجملة%20والكميات" target="_blank" class="wholesale-btn">📦 اطلب تسعيرة الجملة الآن عبر واتساب</a>
-    </div>
-    <h2 class="section-title">تشكيلة العمائم الأزهرية والطرابيش</h2>
-    <div class="products">
-        <div class="card">
-            <img src="00db67a7-7848-4974-a7d2-ae1475cac031.png" alt="طربوش أفندي">
-            <div class="card-body">
-                <h3 class="card-title">طربوش أفندي بتاع زمان الأصلي</h3>
-                <p class="card-desc">طربوش أحمر كلاسيكي فاخر بتصميم تراثي أصيل ومتين.</p>
-                <div class="price">600 جنيه (قطاعي)</div>
-                <span class="wholesale-tag">💼 متاح سعر خاص للجملة</span>
-                <select id="s1"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
-                <button type="button" class="btn" onclick="add('طربوش أفندي بتاع زمان الأصلي', 600, 's1')">+ أضف للسلة</button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="FB_IMG_1756163641386.jpg" alt="عمة أزهرية">
-            <div class="card-body">
-                <h3 class="card-title">عمة أزهرية للأئمة والخطباء</h3>
-                <p class="card-desc">لف يدوي احترافي وثبات عالي يليق بالمنابر والمناسبات.</p>
-                <div class="price">750 جنيه (قطاعي)</div>
-                <span class="wholesale-tag">💼 متاح سعر خاص للجملة</span>
-                <select id="s2"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
-                <button type="button" class="btn" onclick="add('عمة أزهرية للأئمة والخطباء', 750, 's2')">+ أضف للسلة</button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="FB_IMG_1782359834433.jpg" alt="عمة القراء">
-            <div class="card-body">
-                <h3 class="card-title">عمة القراء والمنشدين المميزة</h3>
-                <p class="card-desc">خامة خفيفة ومريحة للرأس مع تقفيل يدوي عالي الجودة.</p>
-                <div class="price">750 جنيه (قطاعي)</div>
-                <span class="wholesale-tag">💼 متاح سعر خاص للجملة</span>
-                <select id="s3"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
-                <button type="button" class="btn" onclick="add('عمة القراء والمنشدين المميزة', 750, 's3')">+ أضف للسلة</button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="IMG-20251026-WA0000.jpg" alt="عمة مطرزة">
-            <div class="card-body">
-                <h3 class="card-title">عمة أزهرية مطرزة فاخرة</h3>
-                <p class="card-desc">تفصيل يدوي متقن بشريط فضي وشاش أبيض ناصع للأئمة والقراء.</p>
-                <div class="price">750 جنيه (قطاعي)</div>
-                <span class="wholesale-tag">💼 متاح سعر خاص للجملة</span>
-                <select id="s4"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
-                <button type="button" class="btn" onclick="add('عمة أزهرية مطرزة فاخرة', 750, 's4')">+ أضف للسلة</button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="IMG20250925161935.jpg" alt="عمة كلاسيك">
-            <div class="card-body">
-                <h3 class="card-title">عمة أزهرية كلاسيك يومية</h3>
-                <p class="card-desc">متانة عالية وراحة تامة للاستخدام اليومي في المساجد والمعاهد.</p>
-                <div class="price">750 جنيه (قطاعي)</div>
-                <span class="wholesale-tag">💼 متاح سعر خاص للجملة</span>
-                <select id="s5"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
-                <button type="button" class="btn" onclick="add('عمة أزهرية كلاسيك يومية', 750, 's5')">+ أضف للسلة</button>
-            </div>
-        </div>
-        <div class="card">
-            <img src="IMG20250925162208.jpg" alt="عمة ملكي">
-            <div class="card-body">
-                <h3 class="card-title">عمة أزهرية ملكي فاخرة</h3>
-                <p class="card-desc">شغل يدوي مخصوص بأجود أنواع الشاش المصري والجوخ الأحمر.</p>
-                <div class="price">750 جنيه (قطاعي)</div>
-                <span class="wholesale-tag">💼 متاح سعر خاص للجملة</span>
-                <select id="s6"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
-                <button type="button" class="btn" onclick="add('عمة أزهرية ملكي فاخرة', 750, 's6')">+ أضف للسلة</button>
-            </div>
-        </div>
-    </div>
-    <div id="cart-area" class="cart-section">
-        <h2>🛒 سلة المشتريات وإتمام الطلب</h2>
-        <div id="cart-items"><p style="color:#777; text-align:center; padding:15px 0;">السلة فارغة حالياً.. اختر المقاس واضغط "أضف للسلة"</p></div>
-        <div class="total" id="cart-total">الإجمالي: 0 جنيه</div>
-        <div class="policy-box">⚠️ تنويه هام: الشحن متاح لجميع محافظات مصر بعد سداد قيمة المنتج مسبقاً.</div>
-        <input type="text" id="cust-name" placeholder="الاسم بالكامل *">
-        <input type="tel" id="cust-phone" placeholder="رقم الموبايل (واتساب) *">
-        <textarea id="cust-address" rows="3" placeholder="المحافظة والعنوان بالتفصيل *"></textarea>
-        <button type="button" class="btn whatsapp-btn" onclick="sendOrder()">📲 إرسال الطلب الآن عبر واتساب</button>
-    </div>
+<div class="box-j">
+<h2 style="color:var(--p);margin-bottom:8px">✨ أسعار خاصة لتجار الجملة والكميات ✨</h2>
+<button class="wa-btn" style="background:var(--p);color:var(--g)" onclick="openWA('السلام عليكم يا أستاذ حسام، استفسار عن أسعار الجملة')">📦 اطلب تسعيرة الجملة الآن</button>
 </div>
-<footer>
-    حسام صنايعي عمم أزهرية — 130 جوهر القائد، أمام كلية شريعة وقانون، القاهرة | 01126565191
-</footer>
+<div class="grid" id="plist"></div>
+<div id="c-area" class="cart">
+<h2 style="color:var(--p);margin-bottom:12px">🛒 سلة المشتريات وإتمام الطلب</h2>
+<div id="citems">السلة فارغة حالياً.. اختر المقاس واضغط أضف للسلة</div>
+<div class="tot" id="ctot">الإجمالي: 0 جنيه</div>
+<input id="cname" placeholder="الاسم بالكامل *">
+<input id="cphone" type="tel" placeholder="رقم الموبايل (واتساب) *">
+<textarea id="caddr" rows="3" placeholder="المحافظة والعنوان بالتفصيل *"></textarea>
+<button class="btn" style="background:#25D366;font-size:17px" onclick="send()">📲 إرسال الطلب الآن عبر واتساب</button>
+</div>
+</div>
 <script>
-    let cart = [];
-    function add(name, price, selectId) {
-        const sizeEl = document.getElementById(selectId);
-        const size = sizeEl ? sizeEl.value : 'مقاس 57';
-        const existing = cart.find(item => item.name === name && item.size === size);
-        if (existing) { existing.qty += 1; } else { cart.push({ name: name, price: price, size: size, qty: 1 }); }
-        updateCart();
-        const toast = document.getElementById('toast');
-        toast.style.display = 'block';
-        setTimeout(() => { toast.style.display = 'none'; }, 2000);
-    }
-    function remove(index) {
-        cart.splice(index, 1);
-        updateCart();
-    }
-    function updateCart() {
-        const itemsContainer = document.getElementById('cart-items');
-        const totalEl = document.getElementById('cart-total');
-        const countEl = document.getElementById('cart-count');
-        let total = 0, count = 0;
-        if (cart.length === 0) {
-            itemsContainer.innerHTML = '<p style="color:#777; text-align:center; padding:15px 0;">السلة فارغة حالياً.. اختر المقاس واضغط "أضف للسلة"</p>';
-            totalEl.textContent = 'الإجمالي: 0 جنيه';
-            countEl.textContent = '0';
-            return;
-        }
-        let html = '';
-        cart.forEach((item, index) => {
-            const itemTotal = item.price * item.qty;
-            total += itemTotal;
-            count += item.qty;
-            html += <div class="cart-item"><div><strong>${item.name}</strong> (${item.size})<br><small style="color:#666;">الكمية: ${item.qty} × ${item.price} = <strong>${itemTotal} جنيه</strong></small></div><button type="button" class="remove-btn" onclick="remove(${index})">حذف</button></div>;
-        });
-        itemsContainer.innerHTML = html;
-        totalEl.textContent = 'الإجمالي: ' + total + ' جنيه';
-        countEl.textContent = count;
-    }
-    function sendOrder() {
-        if (cart.length === 0) { alert('من فضلك أضف منتج واحد على الأقل إلى السلة أولاً!'); return; }
-        const name = document.getElementById('cust-name').value.trim();
-        const phone = document.getElementById('cust-phone').value.trim();
-        const address = document.getElementById('cust-address').value.trim();
-        if (!name || !phone || !address) { alert('من فضلك اكتب الاسم ورقم الموبايل والعنوان بالتفصيل لإتمام الطلب.'); return; }
-        let message = 'السلام عليكم يا أستاذ حسام، طلب جديد من المتجر:\n\n';
-        let total = 0;
-        cart.forEach((item, i) => {
-            const sub = item.price * item.qty;
-            total += sub;
-            message += ${i + 1}- ${item.name} (${item.size}) - الكمية: ${item.qty} - السعر: ${sub} جنيه\n;
-        });
-        message += \n💰 الإجمالي: ${total} جنيه\n👤 الاسم: ${name}\n📱 الموبايل: ${phone}\n📍 العنوان: ${address};
-       const phoneNum = "201126565191";
-const waLink = "https://whatsapp.com/send?phone=" + phoneNum + "&text=" + encodeURIComponent(message);
-window.open(waLink, "_blank"); 
-    }
+const prods=[
+{n:'طربوش أفندي بتاع زمان الأصلي',p:600,img:'00db67a7-7848-4974-a7d2-ae1475cac031.png'},
+{n:'عمة أزهرية للأئمة والخطباء',p:750,img:'FB_IMG_1756163641386.jpg'},
+{n:'عمة القراء والمنشدين المميزة',p:750,img:'FB_IMG_1782359834433.jpg'},
+{n:'عمة أزهرية مطرزة فاخرة',p:750,img:'IMG-20251026-WA0000.jpg'},
+{n:'عمة أزهرية كلاسيك يومية',p:750,img:'IMG20250925161935.jpg'},
+{n:'عمة أزهرية ملكي فاخرة',p:750,img:'IMG20250925162208.jpg'}
+];
+const pl=document.getElementById('plist');
+prods.forEach((x,i)=>{
+pl.innerHTML += '<div class="card"><img src="' + x.img + '"><div class="cb"><h3>' + x.n + '</h3><div class="pr">' + x.p + ' جنيه</div><select id="s' + i + '"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select><button class="btn" onclick="add(' + i + ')">+ أضف للسلة</button></div></div>';
+});
+let cart = [];
+function add(i) {
+  const sz = document.getElementById('s' + i).value;
+  const f = cart.find(c => c.n === prods[i].n && c.sz === sz);
+  if (f) f.q++; else cart.push({n: prods[i].n, p: prods[i].p, sz: sz, q: 1});
+  upd();
+  const t = document.getElementById('toast'); t.style.display = 'block'; setTimeout(() => t.style.display = 'none', 1500);
+}
+function del(i) { cart.splice(i, 1); upd(); }
+function upd() {
+  const ci = document.getElementById('citems'), ct = document.getElementById('ctot'), cn = document.getElementById('cnt');
+  if (!cart.length) { ci.innerHTML = 'السلة فارغة حالياً'; ct.innerText = 'الإجمالي: 0 جنيه'; cn.innerText = '0'; return; }
+  let h = '', tot = 0, cnt = 0;
+  cart.forEach((c, i) => { tot += c.p * c.q; cnt += c.q; h += '<div class="ci"><div><b>' + c.n + '</b> (' + c.sz + ')<br>' + c.q + ' × ' + c.p + ' = ' + (c.p * c.q) + ' ج</div><button class="del" onclick="del(' + i + ')">حذف</button></div>'; });
+  ci.innerHTML = h; ct.innerText = 'الإجمالي: ' + tot + ' جنيه'; cn.innerText = cnt;
+}
+function openWA(txt) {
+  const u = ['htt','ps://','api.wh','atsapp.c','om/send?phone=201126565191&text='].join('') + encodeURIComponent(txt);
+  window.location.href = u;
+}
+function send() {
+  if (!cart.length) return alert('أضف منتج للسلة أولاً');
+  const n = document.getElementById('cname').value.trim(), ph = document.getElementById('cphone').value.trim(), ad = document.getElementById('caddr').value.trim();
+  if (!n || !ph || !ad) return alert('اكتب الاسم والموبايل والعنوان');
+  let m = 'طلب جديد من المتجر:\n', tot = 0;
+  cart.forEach((c, i) => { tot += c.p * c.q; m += (i + 1) + '- ' + c.n + ' (' + c.sz + ') × ' + c.q + ' = ' + (c.p * c.q) + ' ج\n'; });
+  m += '\nالإجمالي: ' + tot + ' جنيه\nالاسم: ' + n + '\nالموبايل: ' + ph + '\nالعنوان: ' + ad;
+  openWA(m);
+}
 </script>
 </body>
 </html>
