@@ -34,68 +34,68 @@ select,input,textarea{width:100%;padding:10px;margin-bottom:10px;border:1px soli
 </head>
 <body>
 
-<div id="toast" class="toast">✅ تمت الإضافة للسلة!</div>
-<a href="#c-area" class="fcart">🛒 السلة (<span id="cnt">0</span>)</a>
+<div id="toast" class="toast">تمت الإضافة للسلة</div>
+<a href="#c-area" class="fcart">السلة (<span id="cnt">0</span>)</a>
 
 <header>
   <h1>حسام صنايعي عمم أزهرية</h1>
   <p>تصنيع العمة الأزهرية وطربوش أفندي بتاع زمان — شغل يدوي متقن</p>
-  <div class="addr">📍 القاهرة - 130 جوهر القائد، أمام كلية شريعة وقانون، بجانب مطعم الهواري<br>🚚 شحن لجميع المحافظات بعد سداد قيمة المنتج</div>
-  <button class="wa-btn" onclick="openWA('السلام عليكم يا أستاذ حسام، استفسار من المتجر')">📲 تواصل واتساب: 01126565191</button>
+  <div class="addr">القاهرة - 130 جوهر القائد، أمام كلية شريعة وقانون، بجانب مطعم الهواري<br>شحن لجميع المحافظات بعد سداد قيمة المنتج</div>
+  <button class="wa-btn" type="button" onclick="openWA('السلام عليكم يا أستاذ حسام، استفسار من المتجر')">تواصل واتساب: 01126565191</button>
 </header>
 
 <div class="container">
   <div class="box-j">
-    <h2 style="color:var(--p);margin-bottom:8px;font-size:19px">✨ أسعار خاصة لتجار الجملة والكميات ✨</h2>
-    <button class="wa-btn" style="background:var(--p);color:var(--g)" onclick="openWA('السلام عليكم يا أستاذ حسام، استفسار عن أسعار الجملة')">📦 اطلب تسعيرة الجملة الآن</button>
+    <h2 style="color:var(--p);margin-bottom:8px;font-size:19px">أسعار خاصة لتجار الجملة والكميات</h2>
+    <button class="wa-btn" type="button" style="background:var(--p);color:var(--g)" onclick="openWA('السلام عليكم يا أستاذ حسام، استفسار عن أسعار الجملة')">اطلب تسعيرة الجملة الآن</button>
   </div>
 
   <div class="grid" id="plist"></div>
 
   <div id="c-area" class="cart">
-    <h2 style="color:var(--p);margin-bottom:12px">🛒 سلة المشتريات وإتمام الطلب</h2>
+    <h2 style="color:var(--p);margin-bottom:12px">سلة المشتريات وإتمام الطلب</h2>
     <div id="citems" style="color:#666">السلة فارغة حالياً.. اختر المقاس واضغط أضف للسلة</div>
     <div class="tot" id="ctot">الإجمالي: 0 جنيه</div>
     <input id="cname" placeholder="الاسم بالكامل *">
     <input id="cphone" type="tel" placeholder="رقم الموبايل (واتساب) *">
     <textarea id="caddr" rows="3" placeholder="المحافظة والعنوان بالتفصيل *"></textarea>
-    <button class="btn" style="background:#25D366;font-size:17px" onclick="send()">📲 إرسال الطلب الآن عبر واتساب</button>
+    <button class="btn" type="button" style="background:#25D366;font-size:17px" onclick="send()">إرسال الطلب الآن عبر واتساب</button>
   </div>
 </div>
 
 <script>
 const prods = [
-  {n:'طربوش أفندي بتاع زمان الأصلي', p:600, img:'00db67a7-7848-4974-a7d2-ae1475cac031.png', altImg:'1.jpg'},
-  {n:'عمة أزهرية للأئمة والخطباء', p:750, img:'FB_IMG_1756163641386.jpg', altImg:'2.jpg'},
-  {n:'عمة القراء والمنشدين المميزة', p:750, img:'FB_IMG_1782359834433.jpg', altImg:'3.jpg'},
-  {n:'عمة أزهرية مطرزة فاخرة', p:750, img:'IMG-20251026-WA0000.jpg', altImg:'4.jpg'},
-  {n:'عمة أزهرية كلاسيك يومية', p:750, img:'IMG20250925161935.jpg', altImg:'5.jpg'},
-  {n:'عمة أزهرية ملكي فاخرة', p:750, img:'IMG20250925162208.jpg', altImg:'6.jpg'},
-  {n:'عمة أزهرية تفصيل يدوي خاص', p:750, img:'١١-٦-٢٠٢٦-٧١٧_resized.jpg', altImg:'7.jpg'},
-  {n:'عمة أزهرية للمناسبات والمحافل', p:750, img:'١٥٨-٥-٢٦-٩٢٥.jpg', altImg:'8.jpg'},
-  {n:'عمة أزهرية شاش مصري فاخر', p:750, img:'١٥٨-٨-٢٦-٩٢٥.jpg', altImg:'9.jpg'},
-  {n:'عمة أزهرية للعلماء والدعاة', p:750, img:'١٥٨٢-٢-٢٦-٩٢٥.jpg', altImg:'10.jpg'},
-  {n:'عمة أزهرية تراثية أصيلة', p:750, img:'٢٣١١٥-٢-٢٦-٧.jpg', altImg:'11.jpg'}
+  {n:"طربوش أفندي بتاع زمان الأصلي", p:600, img:"00db67a7-7848-4974-a7d2-ae1475cac031.png", altImg:"1.jpg"},
+  {n:"عمة أزهرية للأئمة والخطباء", p:750, img:"FB_IMG_1756163641386.jpg", altImg:"2.jpg"},
+  {n:"عمة القراء والمنشدين المميزة", p:750, img:"FB_IMG_1782359834433.jpg", altImg:"3.jpg"},
+  {n:"عمة أزهرية مطرزة فاخرة", p:750, img:"IMG-20251026-WA0000.jpg", altImg:"4.jpg"},
+  {n:"عمة أزهرية كلاسيك يومية", p:750, img:"IMG20250925161935.jpg", altImg:"5.jpg"},
+  {n:"عمة أزهرية ملكي فاخرة", p:750, img:"IMG20250925162208.jpg", altImg:"6.jpg"},
+  {n:"عمة أزهرية تفصيل يدوي خاص", p:750, img:"١١-٦-٢٠٢٦-٧١٧_resized.jpg", altImg:"7.jpg"},
+  {n:"عمة أزهرية للمناسبات والمحافل", p:750, img:"١٥٨-٥-٢٦-٩٢٥.jpg", altImg:"8.jpg"},
+  {n:"عمة أزهرية شاش مصري فاخر", p:750, img:"١٥٨-٨-٢٦-٩٢٥.jpg", altImg:"9.jpg"},
+  {n:"عمة أزهرية للعلماء والدعاة", p:750, img:"١٥٨٢-٢-٢٦-٩٢٥.jpg", altImg:"10.jpg"},
+  {n:"عمة أزهرية تراثية أصيلة", p:750, img:"٢٣١١٥-٢-٢٦-٧.jpg", altImg:"11.jpg"}
 ];
 
 function handleImgError(imgEl, idx) {
   const step = Number(imgEl.dataset.step || 0);
   const p = prods[idx];
   if (step === 0 && p.altImg) {
-    imgEl.dataset.step = '1';
+    imgEl.dataset.step = "1";
     imgEl.src = p.altImg;
     return;
   }
   if (step === 1) {
-    imgEl.dataset.step = '2';
-    imgEl.src = (idx + 1) + '.png';
+    imgEl.dataset.step = "2";
+    imgEl.src = (idx + 1) + ".png";
     return;
   }
-  imgEl.style.display = 'none';
+  imgEl.style.display = "none";
 }
 
-const pl = document.getElementById('plist');
-let htmlCards = '';
+const pl = document.getElementById("plist");
+let htmlCards = "";
 
 prods.forEach((x, i) => {
   const safeSrc = encodeURI(x.img);
@@ -114,7 +114,7 @@ prods.forEach((x, i) => {
           <option>مقاس 60</option>
           <option>مقاس 61</option>
         </select>
-        <button class="btn" onclick="add(${i})">+ أضف للسلة</button>
+        <button class="btn" type="button" onclick="add(${i})">+ أضف للسلة</button>
       </div>
     </div>`;
 });
@@ -123,7 +123,7 @@ pl.innerHTML = htmlCards;
 let cart = [];
 
 function add(i) {
-  const sz = document.getElementById('s' + i).value;
+  const sz = document.getElementById("s" + i).value;
   const f = cart.find(c => c.n === prods[i].n && c.sz === sz);
   if (f) {
     f.q++;
@@ -131,9 +131,9 @@ function add(i) {
     cart.push({n: prods[i].n, p: prods[i].p, sz: sz, q: 1});
   }
   upd();
-  const t = document.getElementById('toast');
-  t.style.display = 'block';
-  setTimeout(() => t.style.display = 'none', 1500);
+  const t = document.getElementById("toast");
+  t.style.display = "block";
+  setTimeout(() => { t.style.display = "none"; }, 1500);
 }
 
 function del(i) {
@@ -142,47 +142,47 @@ function del(i) {
 }
 
 function upd() {
-  const ci = document.getElementById('citems');
-  const ct = document.getElementById('ctot');
-  const cn = document.getElementById('cnt');
+  const ci = document.getElementById("citems");
+  const ct = document.getElementById("ctot");
+  const cn = document.getElementById("cnt");
 
   if (!cart.length) {
-    ci.innerHTML = 'السلة فارغة حالياً.. اختر المقاس واضغط أضف للسلة';
-    ct.innerText = 'الإجمالي: 0 جنيه';
-    cn.innerText = '0';
+    ci.innerHTML = "السلة فارغة حالياً.. اختر المقاس واضغط أضف للسلة";
+    ct.innerText = "الإجمالي: 0 جنيه";
+    cn.innerText = "0";
     return;
   }
 
-  let h = '', tot = 0, cnt = 0;
+  let h = "", tot = 0, cnt = 0;
   cart.forEach((c, i) => {
     tot += c.p * c.q;
     cnt += c.q;
     h += `
       <div class="ci">
         <div><b>${c.n}</b> (${c.sz})<br>${c.q} × ${c.p} = ${c.p * c.q} ج</div>
-        <button class="del" onclick="del(${i})">حذف</button>
+        <button class="del" type="button" onclick="del(${i})">حذف</button>
       </div>`;
   });
 
   ci.innerHTML = h;
-  ct.innerText = 'الإجمالي: ' + tot + ' جنيه';
+  ct.innerText = "الإجمالي: " + tot + " جنيه";
   cn.innerText = cnt;
 }
 
 function openWA(txt) {
-  const url = 'https://wa.me/201126565191?text=' + encodeURIComponent(txt);
+  const url = "https://wa.me/201126565191?text=" + encodeURIComponent(txt);
   window.location.href = url;
 }
 
 function send() {
-  if (!cart.length) return alert('أضف منتج للسلة أولاً');
-  const n = document.getElementById('cname').value.trim();
-  const ph = document.getElementById('cphone').value.trim();
-  const ad = document.getElementById('caddr').value.trim();
+  if (!cart.length) return alert("أضف منتج للسلة أولاً");
+  const n = document.getElementById("cname").value.trim();
+  const ph = document.getElementById("cphone").value.trim();
+  const ad = document.getElementById("caddr").value.trim();
 
-  if (!n || !ph || !ad) return alert('من فضلك اكتب الاسم والموبايل والعنوان');
+  if (!n || !ph || !ad) return alert("من فضلك اكتب الاسم والموبايل والعنوان");
 
-  let m = 'طلب جديد من المتجر:\n', tot = 0;
+  let m = "طلب جديد من المتجر:\n", tot = 0;
   cart.forEach((c, i) => {
     tot += c.p * c.q;
     m += ${i + 1}- ${c.n} (${c.sz}) × ${c.q} = ${c.p * c.q} ج\n;
