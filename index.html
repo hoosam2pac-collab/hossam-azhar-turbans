@@ -70,8 +70,7 @@ const prods=[
 ];
 const pl=document.getElementById('plist');
 prods.forEach((x,i)=>{
-pl.innerHTML += '<div class="card"><img src="' + x.img + '"><div class="cb"><h3>' + x.n + '</h3><div class="pr">' + x.p + ' جنيه</div><select id="s' + i + '"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select><button class="btn" onclick="add(' + i + ')">+ أضف للسلة</button></div></div>';
-});
+pl.innerHTML += '<div class="card"><img src="' + encodeURI(x.img) + '"><div class="cb"><h3>' + x.n + '</h3><div class="pr">' + x.p + ' جنيه</div><select id="s' + i + '"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select><button class="btn" onclick="add(' + i + ')">+ أضف للسلة</button></div></div>';
 let cart = [];
 function add(i) {
   const sz = document.getElementById('s' + i).value;
