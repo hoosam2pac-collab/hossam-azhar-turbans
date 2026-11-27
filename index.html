@@ -1,137 +1,41 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>حسام صنايعي عمم أزهرية</title>
     <style>
-        :root {
-            --primary: #0f3d2e;
-            --gold: #c59d5f;
-            --bg: #f8f6f0;
-            --white: #ffffff;
-            --text: #222222;
-        }
-        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; }
+        :root { --primary: #0f3d2e; --gold: #c59d5f; --bg: #f8f6f0; --white: #ffffff; --text: #222222; }
+        * { box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; }
         body { background-color: var(--bg); color: var(--text); }
-        header {
-            background: linear-gradient(135deg, var(--primary), #185a44);
-            color: var(--white);
-            padding: 30px 20px;
-            text-align: center;
-            border-bottom: 4px solid var(--gold);
-        }
-        header h1 { font-size: 30px; margin-bottom: 10px; color: var(--gold); }
-        header p { font-size: 16px; opacity: 0.95; max-width: 750px; margin: 0 auto 12px; line-height: 1.6; }
-        .address-bar {
-            background: rgba(255, 255, 255, 0.12);
-            border: 1px solid var(--gold);
-            border-radius: 10px;
-            padding: 10px 16px;
-            max-width: 750px;
-            margin: 12px auto 16px;
-            font-size: 15px;
-            line-height: 1.7;
-        }
-        .shipping-note {
-            color: #ffe082;
-            font-weight: bold;
-            display: block;
-            margin-top: 4px;
-        }
+        header { background: linear-gradient(135deg, var(--primary), #185a44); color: var(--white); padding: 28px 18px; text-align: center; border-bottom: 4px solid var(--gold); }
+        header h1 { font-size: 28px; margin-bottom: 8px; color: var(--gold); }
+        header p { font-size: 15px; max-width: 750px; margin: 0 auto 12px; line-height: 1.6; }
+        .address-bar { background: rgba(255,255,255,0.12); border: 1px solid var(--gold); border-radius: 10px; padding: 10px 14px; max-width: 750px; margin: 12px auto 15px; font-size: 14px; line-height: 1.7; }
+        .shipping-note { color: #ffe082; font-weight: bold; display: block; margin-top: 4px; }
         .badges { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-        .fb-badge, .wa-top-badge {
-            display: inline-block;
-            color: white;
-            padding: 8px 18px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: bold;
-        }
+        .fb-badge, .wa-top-badge { display: inline-block; color: white; padding: 8px 16px; border-radius: 25px; text-decoration: none; font-size: 14px; font-weight: bold; }
         .fb-badge { background: #1877f2; }
         .wa-top-badge { background: #25D366; }
-        .container { max-width: 1150px; margin: 35px auto; padding: 0 15px; }
-        .section-title { text-align: center; font-size: 26px; color: var(--primary); margin-bottom: 25px; }
-        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 22px; }
-        .card {
-            background: var(--white);
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-            border: 1px solid #e5e0d5;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .card-img-box {
-            width: 100%;
-            height: 250px;
-            background: #eae4d7;
-            border-bottom: 2px solid var(--gold);
-            overflow: hidden;
-        }
-        .card-img-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        .card-body { padding: 18px; }
-        .card-title { font-size: 19px; color: var(--primary); margin-bottom: 8px; }
-        .card-desc { font-size: 14px; color: #555; margin-bottom: 12px; line-height: 1.5; }
-        .price { font-size: 20px; font-weight: bold; color: #b0833e; margin-bottom: 12px; }
-        select, input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 12px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            font-size: 15px;
-        }
-        .btn {
-            width: 100%;
-            padding: 12px;
-            background: var(--primary);
-            color: var(--white);
-            border: none;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+        .container { max-width: 1150px; margin: 30px auto; padding: 0 15px; }
+        .section-title { text-align: center; font-size: 24px; color: var(--primary); margin-bottom: 22px; }
+        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .card { background: var(--white); border-radius: 14px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.08); border: 1px solid #e5e0d5; display: flex; flex-direction: column; justify-content: space-between; }
+        .card img { width: 100%; height: 260px; object-fit: cover; display: block; border-bottom: 2px solid var(--gold); }
+        .card-body { padding: 16px; }
+        .card-title { font-size: 18px; color: var(--primary); margin-bottom: 6px; }
+        .card-desc { font-size: 13px; color: #555; margin-bottom: 10px; line-height: 1.5; }
+        .price { font-size: 19px; font-weight: bold; color: #b0833e; margin-bottom: 10px; }
+        select, input, textarea { width: 100%; padding: 9px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px; }
+        .btn { width: 100%; padding: 11px; background: var(--primary); color: var(--white); border: none; border-radius: 8px; font-size: 15px; font-weight: bold; cursor: pointer; }
         .btn:hover { background: #185a44; }
-        .cart-section {
-            background: var(--white);
-            margin-top: 45px;
-            padding: 25px;
-            border-radius: 14px;
-            border: 2px solid var(--gold);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
-        }
-        .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
-        }
-        .remove-btn { background: #d9534f; color: white; border: none; padding: 5px 12px; border-radius: 6px; cursor: pointer; }
-        .total { font-size: 22px; font-weight: bold; color: var(--primary); margin: 15px 0; text-align: left; }
-        .policy-box {
-            background: #fff8e6;
-            border: 1px solid #f0d58c;
-            color: #6b4f00;
-            padding: 10px 14px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            font-size: 14px;
-            font-weight: bold;
-        }
-        .whatsapp-btn { background: #25D366; color: white; font-size: 18px; }
-        .whatsapp-btn:hover { background: #1ebe5d; }
-        footer { text-align: center; padding: 24px 15px; margin-top: 45px; background: var(--primary); color: white; font-size: 14px; line-height: 1.8; }
+        .cart-section { background: var(--white); margin-top: 40px; padding: 22px; border-radius: 14px; border: 2px solid var(--gold); }
+        .cart-item { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid #eee; }
+        .remove-btn { background: #d9534f; color: white; border: none; padding: 4px 10px; border-radius: 6px; cursor: pointer; }
+        .total { font-size: 20px; font-weight: bold; color: var(--primary); margin: 14px 0; text-align: left; }
+        .policy-box { background: #fff8e6; border: 1px solid #f0d58c; color: #6b4f00; padding: 10px; border-radius: 8px; margin-bottom: 14px; font-size: 14px; font-weight: bold; }
+        .whatsapp-btn { background: #25D366; color: white; font-size: 17px; }
+        footer { text-align: center; padding: 20px; margin-top: 40px; background: var(--primary); color: white; font-size: 13px; line-height: 1.8; }
     </style>
 </head>
 <body>
@@ -151,75 +55,88 @@
 
 <div class="container">
     <h2 class="section-title">تشكيلة العمائم الأزهرية والطرابيش</h2>
-    <div class="products" id="products-list"></div>
+    <div class="products">
 
-    <div class="cart-section" id="cart-box">
-        <h2 style="color: var(--primary); margin-bottom: 15px;">🛒 سلة المشتريات وإتمام الطلب</h2>
+        <div class="card">
+            <img src="00db67a7-7848-4974-a7d2-ae1475cac031.png" alt="عمة أزهرية مطرزة">
+            <div class="card-body">
+                <h3 class="card-title">عمة أزهرية مطرزة فاخرة</h3>
+                <p class="card-desc">تفصيل يدوي متقن بشريط فضي وشاش أبيض ناصع للأئمة والقراء.</p>
+                <div class="price">350 جنيه</div>
+                <select id="s1"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
+                <button class="btn" onclick="add('عمة أزهرية مطرزة فاخرة', 350, 's1')">+ أضف للسلة</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="FB_IMG_1756163641386.jpg" alt="عمة أزهرية للأئمة">
+            <div class="card-body">
+                <h3 class="card-title">عمة أزهرية للأئمة والخطباء</h3>
+                <p class="card-desc">لف يدوي احترافي وثبات عالي يليق بالمنابر والمناسبات.</p>
+                <div class="price">350 جنيه</div>
+                <select id="s2"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
+                <button class="btn" onclick="add('عمة أزهرية للأئمة والخطباء', 350, 's2')">+ أضف للسلة</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="FB_IMG_1782359834433.jpg" alt="عمة القراء والمنشدين">
+            <div class="card-body">
+                <h3 class="card-title">عمة القراء والمنشدين المميزة</h3>
+                <p class="card-desc">خامة خفيفة ومريحة للرأس مع تقفيل يدوي عالي الجودة.</p>
+                <div class="price">350 جنيه</div>
+                <select id="s3"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
+                <button class="btn" onclick="add('عمة القراء والمنشدين المميزة', 350, 's3')">+ أضف للسلة</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="IMG-20251026-WA0000.jpg" alt="طربوش أفندي">
+            <div class="card-body">
+                <h3 class="card-title">طربوش أفندي بتاع زمان الأصلي</h3>
+                <p class="card-desc">طربوش أحمر كلاسيكي فاخر بتصميم تراثي أصيل ومتين.</p>
+                <div class="price">250 جنيه</div>
+                <select id="s4"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
+                <button class="btn" onclick="add('طربوش أفندي بتاع زمان الأصلي', 250, 's4')">+ أضف للسلة</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="IMG20250925161935.jpg" alt="عمة شاش مصري">
+            <div class="card-body">
+                <h3 class="card-title">عمة أزهرية شاش مصري فاخر</h3>
+                <p class="card-desc">مناسبة للاستخدام اليومي والمناسبات الرسمية بتهوية ممتازة.</p>
+                <div class="price">350 جنيه</div>
+                <select id="s5"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
+                <button class="btn" onclick="add('عمة أزهرية شاش مصري فاخر', 350, 's5')">+ أضف للسلة</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="IMG20250925162206.jpg" alt="عمة أزهرية كلاسيك">
+            <div class="card-body">
+                <h3 class="card-title">عمة أزهرية كلاسيك</h3>
+                <p class="card-desc">تفصيل خاص حسب المقاس بدقة عالية وخامات مختارة.</p>
+                <div class="price">350 جنيه</div>
+                <select id="s6"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
+                <button class="btn" onclick="add('عمة أزهرية كلاسيك', 350, 's6')">+ أضف للسلة</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="١١٠٦٠٢٠٢٦١٤٠٧١٧_resized.jpg" alt="عمة أزهرية خاصة">
+            <div class="card-body">
+                <h3 class="card-title">عمة أزهرية خاصة (تفصيل يدوي)</h3>
+                <p class="card-desc">تصميم أنيق ومريح بمقاسات مضبوطة من 55 إلى 61.</p>
+                <div class="price">350 جنيه</div>
+                <select id="s7"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
+                <button class="btn" onclick="add('عمة أزهرية خاصة', 350, 's7')">+ أضف للسلة</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="cart-section">
+        <h2 style="color: var(--primary); margin-bottom: 12px;">🛒 سلة المشتريات وإتمام الطلب</h2>
         <div id="cart-items"><p style="color:#777;">السلة فارغة حالياً، اختر العمامة المناسبة من الأعلى.</p></div>
         <div class="total" id="total-price">الإجمالي: 0 جنيه</div>
-
-        <div class="policy-box">🚚 تنويه: يوجد شحن لجميع محافظات مصر بعد سداد حق المنتج.</div>
-
-        <h3 style="margin: 15px 0 10px; color: var(--primary);">بيانات التوصيل:</h3>
-        <input type="text" id="cust-name" placeholder="الاسم بالكامل">
-        <input type="tel" id="cust-phone" placeholder="رقم الموبايل (واتساب)">
-        <input type="text" id="cust-gov" placeholder="المحافظة والمركز">
-        <textarea id="cust-address" rows="2" placeholder="العنوان بالتفصيل"></textarea>
-        <button class="btn whatsapp-btn" onclick="sendWhatsApp()">📲 إرسال الطلب عبر واتساب</button>
-    </div>
-</div>
-
-<footer>
-    <div>📍 العنوان: القاهرة - 130 جوهر القائد أمام كلية شريعة وقانون بجانب مطعم الهواري</div>
-    <div>🚚 يوجد شحن لجميع محافظات مصر بعد سداد حق المنتج | 📱 واتساب: 01126565191</div>
-    <div>جميع الحقوق محفوظة &copy; حسام صنايعي عمم أزهرية</div>
-</footer>
-
-<script>
-    const WHATSAPP_NUMBER = "201126565191";
-
-    const products = [
-        { id: 1, img: "00db67a7-7848-4974-a7d2-ae1475cac031.png", name: "عمة أزهرية مطرزة فاخرة", desc: "تفصيل يدوي متقن بشريط فضي وشاش أبيض ناصع للأئمة والقراء.", price: 350 },
-        { id: 2, img: "FB_IMG_1756163641386.jpg", name: "عمة أزهرية للأئمة والخطباء", desc: "لف يدوي احترافي وثبات عالي يليق بالمنابر والمناسبات.", price: 350 },
-        { id: 3, img: "FB_IMG_1782359834433.jpg", name: "عمة القراء والمنشدين المميزة", desc: "خامة خفيفة ومريحة للرأس مع تقفيل يدوي عالي الجودة.", price: 350 },
-        { id: 4, img: "IMG-20251026-WA0000.jpg", name: "طربوش أفندي بتاع زمان الأصلي", desc: "طربوش أحمر كلاسيكي فاخر بتصميم تراثي أصيل ومتين.", price: 250 },
-        { id: 5, img: "IMG20250925161935.jpg", name: "عمة أزهرية شاش مصري فاخر", desc: "مناسبة للاستخدام اليومي والمناسبات الرسمية بتهوية ممتازة.", price: 350 },
-        { id: 6, img: "IMG20250925162206.jpg", name: "عمة أزهرية كلاسيك", desc: "تفصيل خاص حسب المقاس بدقة عالية وخامات مختارة.", price: 350 },
-        { id: 7, img: "١١٠٦٠٢٠٢٦١٤٠٧١٧_resized.jpg", name: "عمة أزهرية خاصة (تفصيل يدوي)", desc: "تصميم أنيق ومريح بمقاسات مضبوطة من 55 إلى 61.", price: 350 }
-    ];
-
-    let cart = [];
-
-    function renderProducts() {
-        const list = document.getElementById("products-list");
-        list.innerHTML = products.map(p => `
-            <div class="card">
-                <div class="card-img-box">
-                    <img src="${p.img}" alt="${p.name}">
-                </div>
-                <div class="card-body">
-                    <h3 class="card-title">${p.name}</h3>
-                    <p class="card-desc">${p.desc}</p>
-                    <div class="price">${p.price} جنيه</div>
-                    <select id="size-${p.id}">
-                        <option value="55">مقاس 55</option>
-                        <option value="56">مقاس 56</option>
-                        <option value="57" selected>مقاس 57</option>
-                        <option value="58">مقاس 58</option>
-                        <option value="59">مقاس 59</option>
-                        <option value="60">مقاس 60</option>
-                        <option value="61">مقاس 61</option>
-                    </select>
-                    <button class="btn" onclick="addToCart(${p.id})">+ أضف للسلة</button>
-                </div>
-            </div>
-        `).join("");
-    }
-
-    function addToCart(id) {
-        const product = products.find(p => p.id === id);
-        const size = document.getElementById(size-${id}).value;
-        cart.push({ ...product, size, cartId: Date.now() + Math.random() });
-        renderCart();
-        alert("تمت إضافة " + product.name + " (مقاس " + size + ") إلى السلة!");
-    }
