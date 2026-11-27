@@ -18,6 +18,10 @@
         .fb-badge { background: #1877f2; }
         .wa-top-badge { background: #25D366; }
         .container { max-width: 1150px; margin: 30px auto; padding: 0 15px; }
+        .wholesale-banner { background: linear-gradient(135deg, #fff9e6, #f5e6c4); border: 2px solid var(--gold); border-radius: 14px; padding: 20px; margin-bottom: 30px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+        .wholesale-banner h2 { color: var(--primary); font-size: 22px; margin-bottom: 8px; }
+        .wholesale-banner p { color: #444; font-size: 15px; margin-bottom: 14px; line-height: 1.6; }
+        .wholesale-btn { display: inline-block; background: var(--primary); color: var(--gold); padding: 10px 22px; border-radius: 25px; text-decoration: none; font-weight: bold; font-size: 15px; border: 1px solid var(--gold); }
         .section-title { text-align: center; font-size: 24px; color: var(--primary); margin-bottom: 22px; }
         .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
         .card { background: var(--white); border-radius: 14px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.08); border: 1px solid #e5e0d5; display: flex; flex-direction: column; justify-content: space-between; }
@@ -25,7 +29,8 @@
         .card-body { padding: 16px; }
         .card-title { font-size: 18px; color: var(--primary); margin-bottom: 6px; }
         .card-desc { font-size: 13px; color: #555; margin-bottom: 10px; line-height: 1.5; }
-        .price { font-size: 19px; font-weight: bold; color: #b0833e; margin-bottom: 10px; }
+        .price { font-size: 19px; font-weight: bold; color: #b0833e; margin-bottom: 4px; }
+        .wholesale-tag { font-size: 12px; color: #0f3d2e; background: #e8f3ef; padding: 3px 8px; border-radius: 5px; display: inline-block; margin-bottom: 10px; font-weight: bold; }
         select, input, textarea { width: 100%; padding: 9px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 8px; font-size: 14px; }
         .btn { width: 100%; padding: 11px; background: var(--primary); color: var(--white); border: none; border-radius: 8px; font-size: 15px; font-weight: bold; cursor: pointer; }
         .btn:hover { background: #185a44; }
@@ -54,17 +59,25 @@
 </header>
 
 <div class="container">
+
+    <div class="wholesale-banner">
+        <h2>✨ أسعار خاصة ومميزة لتجار الجملة والكميات ✨</h2>
+        <p>تجهيز كامل للمعاهد الأزهرية، المساجد، فرق الإنشاد الديني، والمحلات التجارية بأسعار تصنيع خاصة للكميات.</p>
+        <a href="https://wa.me?text=السلام عليكم يا أستاذ حسام، كنت حابب أستفسر عن أسعار الجملة والكميات" target="_blank" class="wholesale-btn">📦 اطلب تسعيرة الجملة الآن عبر واتساب</a>
+    </div>
+
     <h2 class="section-title">تشكيلة العمائم الأزهرية والطرابيش</h2>
     <div class="products">
 
         <div class="card">
-            <img src="00db67a7-7848-4974-a7d2-ae1475cac031.png" alt="عمة أزهرية مطرزة">
+            <img src="00db67a7-7848-4974-a7d2-ae1475cac031.png" alt="طربوش أفندي بتاع زمان">
             <div class="card-body">
-                <h3 class="card-title">عمة أزهرية مطرزة فاخرة</h3>
-                <p class="card-desc">تفصيل يدوي متقن بشريط فضي وشاش أبيض ناصع للأئمة والقراء.</p>
-                <div class="price">350 جنيه</div>
+                <h3 class="card-title">طربوش أفندي بتاع زمان الأصلي</h3>
+                <p class="card-desc">طربوش أحمر كلاسيكي فاخر بتصميم تراثي أصيل ومتين.</p>
+                <div class="price">250 جنيه (قطاعي)</div>
+                <span class="wholesale-tag">💼 متاح سعر خاص للجملة</span>
                 <select id="s1"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
-                <button class="btn" onclick="add('عمة أزهرية مطرزة فاخرة', 350, 's1')">+ أضف للسلة</button>
+                <button class="btn" onclick="add('طربوش أفندي بتاع زمان الأصلي', 250, 's1')">+ أضف للسلة</button>
             </div>
         </div>
 
@@ -73,9 +86,10 @@
             <div class="card-body">
                 <h3 class="card-title">عمة أزهرية للأئمة والخطباء</h3>
                 <p class="card-desc">لف يدوي احترافي وثبات عالي يليق بالمنابر والمناسبات.</p>
-                <div class="price">350 جنيه</div>
+                <div class="price">750 جنيه (قطاعي)</div>
+                <span class="wholesale-tag">💼 متاح سعر خاص للجملة</span>
                 <select id="s2"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
-                <button class="btn" onclick="add('عمة أزهرية للأئمة والخطباء', 350, 's2')">+ أضف للسلة</button>
+                <button class="btn" onclick="add('عمة أزهرية للأئمة والخطباء', 750, 's2')">+ أضف للسلة</button>
             </div>
         </div>
 
@@ -84,20 +98,22 @@
             <div class="card-body">
                 <h3 class="card-title">عمة القراء والمنشدين المميزة</h3>
                 <p class="card-desc">خامة خفيفة ومريحة للرأس مع تقفيل يدوي عالي الجودة.</p>
-                <div class="price">350 جنيه</div>
+                <div class="price">750 جنيه (قطاعي)</div>
+                <span class="wholesale-tag">💼 متاح سعر خاص للجملة</span>
                 <select id="s3"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
-                <button class="btn" onclick="add('عمة القراء والمنشدين المميزة', 350, 's3')">+ أضف للسلة</button>
+                <button class="btn" onclick="add('عمة القراء والمنشدين المميزة', 750, 's3')">+ أضف للسلة</button>
             </div>
         </div>
 
         <div class="card">
-            <img src="IMG-20251026-WA0000.jpg" alt="طربوش أفندي">
+            <img src="IMG-20251026-WA0000.jpg" alt="عمة أزهرية مطرزة">
             <div class="card-body">
-                <h3 class="card-title">طربوش أفندي بتاع زمان الأصلي</h3>
-                <p class="card-desc">طربوش أحمر كلاسيكي فاخر بتصميم تراثي أصيل ومتين.</p>
-                <div class="price">250 جنيه</div>
+                <h3 class="card-title">عمة أزهرية مطرزة فاخرة</h3>
+                <p class="card-desc">تفصيل يدوي متقن بشريط فضي وشاش أبيض ناصع للأئمة والقراء.</p>
+                <div class="price">750 جنيه (قطاعي)</div>
+                <span class="wholesale-tag">💼 متاح سعر خاص للجملة</span>
                 <select id="s4"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
-                <button class="btn" onclick="add('طربوش أفندي بتاع زمان الأصلي', 250, 's4')">+ أضف للسلة</button>
+                <button class="btn" onclick="add('عمة أزهرية مطرزة فاخرة', 750, 's4')">+ أضف للسلة</button>
             </div>
         </div>
 
@@ -106,37 +122,11 @@
             <div class="card-body">
                 <h3 class="card-title">عمة أزهرية شاش مصري فاخر</h3>
                 <p class="card-desc">مناسبة للاستخدام اليومي والمناسبات الرسمية بتهوية ممتازة.</p>
-                <div class="price">350 جنيه</div>
+                <div class="price">750 جنيه (قطاعي)</div>
+                <span class="wholesale-tag">💼 متاح سعر خاص للجملة</span>
                 <select id="s5"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
-                <button class="btn" onclick="add('عمة أزهرية شاش مصري فاخر', 350, 's5')">+ أضف للسلة</button>
+                <button class="btn" onclick="add('عمة أزهرية شاش مصري فاخر', 750, 's5')">+ أضف للسلة</button>
             </div>
         </div>
 
         <div class="card">
-            <img src="IMG20250925162206.jpg" alt="عمة أزهرية كلاسيك">
-            <div class="card-body">
-                <h3 class="card-title">عمة أزهرية كلاسيك</h3>
-                <p class="card-desc">تفصيل خاص حسب المقاس بدقة عالية وخامات مختارة.</p>
-                <div class="price">350 جنيه</div>
-                <select id="s6"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
-                <button class="btn" onclick="add('عمة أزهرية كلاسيك', 350, 's6')">+ أضف للسلة</button>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="١١٠٦٠٢٠٢٦١٤٠٧١٧_resized.jpg" alt="عمة أزهرية خاصة">
-            <div class="card-body">
-                <h3 class="card-title">عمة أزهرية خاصة (تفصيل يدوي)</h3>
-                <p class="card-desc">تصميم أنيق ومريح بمقاسات مضبوطة من 55 إلى 61.</p>
-                <div class="price">350 جنيه</div>
-                <select id="s7"><option>مقاس 55</option><option>مقاس 56</option><option selected>مقاس 57</option><option>مقاس 58</option><option>مقاس 59</option><option>مقاس 60</option><option>مقاس 61</option></select>
-                <button class="btn" onclick="add('عمة أزهرية خاصة', 350, 's7')">+ أضف للسلة</button>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="cart-section">
-        <h2 style="color: var(--primary); margin-bottom: 12px;">🛒 سلة المشتريات وإتمام الطلب</h2>
-        <div id="cart-items"><p style="color:#777;">السلة فارغة حالياً، اختر العمامة المناسبة من الأعلى.</p></div>
-        <div class="total" id="total-price">الإجمالي: 0 جنيه</div>
