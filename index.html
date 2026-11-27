@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
@@ -17,46 +17,65 @@
         header {
             background: linear-gradient(135deg, var(--primary), #185a44);
             color: var(--white);
-            padding: 25px 20px;
+            padding: 30px 20px;
             text-align: center;
             border-bottom: 4px solid var(--gold);
         }
-        header h1 { font-size: 28px; margin-bottom: 8px; color: var(--gold); }
-        header p { font-size: 16px; opacity: 0.95; }
-        .fb-badge {
+        header h1 { font-size: 30px; margin-bottom: 10px; color: var(--gold); }
+        header p { font-size: 16px; opacity: 0.95; max-width: 750px; margin: 0 auto 12px; line-height: 1.6; }
+        .address-bar {
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid var(--gold);
+            border-radius: 10px;
+            padding: 10px 16px;
+            max-width: 750px;
+            margin: 12px auto 16px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .shipping-note {
+            color: #ffe082;
+            font-weight: bold;
+            display: block;
+            margin-top: 4px;
+        }
+        .badges { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+        .fb-badge, .wa-top-badge {
             display: inline-block;
-            margin-top: 12px;
-            background: #1877f2;
             color: white;
-            padding: 6px 15px;
-            border-radius: 20px;
+            padding: 8px 18px;
+            border-radius: 25px;
             text-decoration: none;
             font-size: 14px;
             font-weight: bold;
         }
-        .container { max-width: 1100px; margin: 30px auto; padding: 0 15px; }
-        .section-title { text-align: center; font-size: 24px; color: var(--primary); margin-bottom: 25px; position: relative; }
-        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+        .fb-badge { background: #1877f2; }
+        .wa-top-badge { background: #25D366; }
+        .container { max-width: 1150px; margin: 35px auto; padding: 0 15px; }
+        .section-title { text-align: center; font-size: 26px; color: var(--primary); margin-bottom: 25px; }
+        .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 22px; }
         .card {
             background: var(--white);
-            border-radius: 12px;
+            border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 4px 14px rgba(0,0,0,0.08);
             border: 1px solid #e5e0d5;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
-        .card-img {
-            height: 200px;
+        .card-img-box {
+            width: 100%;
+            height: 250px;
             background: #eae4d7;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-weight: bold;
-            font-size: 18px;
             border-bottom: 2px solid var(--gold);
+            overflow: hidden;
+        }
+        .card-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
         .card-body { padding: 18px; }
         .card-title { font-size: 19px; color: var(--primary); margin-bottom: 8px; }
@@ -85,9 +104,9 @@
         .btn:hover { background: #185a44; }
         .cart-section {
             background: var(--white);
-            margin-top: 40px;
+            margin-top: 45px;
             padding: 25px;
-            border-radius: 12px;
+            border-radius: 14px;
             border: 2px solid var(--gold);
             box-shadow: 0 4px 15px rgba(0,0,0,0.06);
         }
@@ -98,31 +117,50 @@
             padding: 10px 0;
             border-bottom: 1px solid #eee;
         }
-        .remove-btn { background: #d9534f; color: white; border: none; padding: 4px 10px; border-radius: 5px; cursor: pointer; }
+        .remove-btn { background: #d9534f; color: white; border: none; padding: 5px 12px; border-radius: 6px; cursor: pointer; }
         .total { font-size: 22px; font-weight: bold; color: var(--primary); margin: 15px 0; text-align: left; }
+        .policy-box {
+            background: #fff8e6;
+            border: 1px solid #f0d58c;
+            color: #6b4f00;
+            padding: 10px 14px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            font-weight: bold;
+        }
         .whatsapp-btn { background: #25D366; color: white; font-size: 18px; }
         .whatsapp-btn:hover { background: #1ebe5d; }
-        footer { text-align: center; padding: 20px; margin-top: 40px; background: var(--primary); color: white; font-size: 14px; }
+        footer { text-align: center; padding: 24px 15px; margin-top: 45px; background: var(--primary); color: white; font-size: 14px; line-height: 1.8; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>حسام صنايعي عمم أزهرية</h1>
-    <p>تفصيل وتجهيز أرقى العمائم الأزهرية يدوياً بأجود الخامات وأدق المقاسات</p>
-    <a href="https://facebook.com" target="_blank" class="fb-badge">تابع صفحتنا على فيسبوك (7000+ متابع)</a>
+    <p>تصنيع العمة الأزهرية للأئمة والخطباء والقراء والمنشدين وطربوش أفندي بتاع زمان — شغل يدوي متقن بأجود الخامات وأدق المقاسات</p>
+    <div class="address-bar">
+        📍 <strong>العنوان:</strong> القاهرة - 130 جوهر القائد، أمام كلية شريعة وقانون، بجانب مطعم الهواري
+        <span class="shipping-note">🚚 يوجد شحن لجميع محافظات مصر بعد سداد حق المنتج</span>
+    </div>
+    <div class="badges">
+        <a href="https://facebook.com" target="_blank" class="fb-badge">صفحتنا على فيسبوك (7000+ متابع)</a>
+        <a href="https://wa.me" target="_blank" class="wa-top-badge">تواصل واتساب: 01126565191</a>
+    </div>
 </header>
 
 <div class="container">
-    <h2 class="section-title">تشكيلة العمائم الأزهرية</h2>
+    <h2 class="section-title">تشكيلة العمائم الأزهرية والطرابيش</h2>
     <div class="products" id="products-list"></div>
 
-    <div class="cart-section">
+    <div class="cart-section" id="cart-box">
         <h2 style="color: var(--primary); margin-bottom: 15px;">🛒 سلة المشتريات وإتمام الطلب</h2>
         <div id="cart-items"><p style="color:#777;">السلة فارغة حالياً، اختر العمامة المناسبة من الأعلى.</p></div>
         <div class="total" id="total-price">الإجمالي: 0 جنيه</div>
 
-        <h3 style="margin: 20px 0 10px; color: var(--primary);">بيانات التوصيل:</h3>
+        <div class="policy-box">🚚 تنويه: يوجد شحن لجميع محافظات مصر بعد سداد حق المنتج.</div>
+
+        <h3 style="margin: 15px 0 10px; color: var(--primary);">بيانات التوصيل:</h3>
         <input type="text" id="cust-name" placeholder="الاسم بالكامل">
         <input type="tel" id="cust-phone" placeholder="رقم الموبايل (واتساب)">
         <input type="text" id="cust-gov" placeholder="المحافظة والمركز">
@@ -132,18 +170,22 @@
 </div>
 
 <footer>
-    جميع الحقوق محفوظة &copy; حسام صنايعي عمم أزهرية
+    <div>📍 العنوان: القاهرة - 130 جوهر القائد أمام كلية شريعة وقانون بجانب مطعم الهواري</div>
+    <div>🚚 يوجد شحن لجميع محافظات مصر بعد سداد حق المنتج | 📱 واتساب: 01126565191</div>
+    <div>جميع الحقوق محفوظة &copy; حسام صنايعي عمم أزهرية</div>
 </footer>
 
 <script>
-    // ضع رقم الواتساب الخاص بك هنا بصيغة دولية بدون علامة + (مثال: 201012345678)
-    const WHATSAPP_NUMBER = "201000000000";
+    const WHATSAPP_NUMBER = "201126565191";
 
     const products = [
-        { id: 1, name: "عمة أزهرية شاش مصري فاخر", desc: "لف يدوي متقن، خفيفة ومريحة للاستخدام اليومي والمناسبات.", price: 350 },
-        { id: 2, name: "طربوش أزهري أحمر أصلي", desc: "خامة جوخ فاخر متين ومبطن من الداخل لثبات مثالي.", price: 250 },
-        { id: 3, name: "عمة خطباء وأئمة ملكي", desc: "شاش ناعم عالي الجودة بتقفيل احترافي يليق بالمنابر.", price: 450 },
-        { id: 4, name: "عمة أزهرية صيفي خفيفة", desc: "مناسبة للأجواء الحارة مع تهوية ممتازة وثبات عالي.", price: 300 }
+        { id: 1, img: "00db67a7-7848-4974-a7d2-ae1475cac031.png", name: "عمة أزهرية مطرزة فاخرة", desc: "تفصيل يدوي متقن بشريط فضي وشاش أبيض ناصع للأئمة والقراء.", price: 350 },
+        { id: 2, img: "FB_IMG_1756163641386.jpg", name: "عمة أزهرية للأئمة والخطباء", desc: "لف يدوي احترافي وثبات عالي يليق بالمنابر والمناسبات.", price: 350 },
+        { id: 3, img: "FB_IMG_1782359834433.jpg", name: "عمة القراء والمنشدين المميزة", desc: "خامة خفيفة ومريحة للرأس مع تقفيل يدوي عالي الجودة.", price: 350 },
+        { id: 4, img: "IMG-20251026-WA0000.jpg", name: "طربوش أفندي بتاع زمان الأصلي", desc: "طربوش أحمر كلاسيكي فاخر بتصميم تراثي أصيل ومتين.", price: 250 },
+        { id: 5, img: "IMG20250925161935.jpg", name: "عمة أزهرية شاش مصري فاخر", desc: "مناسبة للاستخدام اليومي والمناسبات الرسمية بتهوية ممتازة.", price: 350 },
+        { id: 6, img: "IMG20250925162206.jpg", name: "عمة أزهرية كلاسيك", desc: "تفصيل خاص حسب المقاس بدقة عالية وخامات مختارة.", price: 350 },
+        { id: 7, img: "١١٠٦٠٢٠٢٦١٤٠٧١٧_resized.jpg", name: "عمة أزهرية خاصة (تفصيل يدوي)", desc: "تصميم أنيق ومريح بمقاسات مضبوطة من 55 إلى 61.", price: 350 }
     ];
 
     let cart = [];
@@ -152,7 +194,9 @@
         const list = document.getElementById("products-list");
         list.innerHTML = products.map(p => `
             <div class="card">
-                <div class="card-img">صورة: ${p.name}</div>
+                <div class="card-img-box">
+                    <img src="${p.img}" alt="${p.name}">
+                </div>
                 <div class="card-body">
                     <h3 class="card-title">${p.name}</h3>
                     <p class="card-desc">${p.desc}</p>
@@ -177,54 +221,5 @@
         const size = document.getElementById(size-${id}).value;
         cart.push({ ...product, size, cartId: Date.now() + Math.random() });
         renderCart();
+        alert("تمت إضافة " + product.name + " (مقاس " + size + ") إلى السلة!");
     }
-
-    function removeFromCart(cartId) {
-        cart = cart.filter(item => item.cartId !== cartId);
-        renderCart();
-    }
-
-    function renderCart() {
-        const container = document.getElementById("cart-items");
-        if (cart.length === 0) {
-            container.innerHTML = '<p style="color:#777;">السلة فارغة حالياً، اختر العمامة المناسبة من الأعلى.</p>';
-            document.getElementById("total-price").innerText = "الإجمالي: 0 جنيه";
-            return;
-        }
-        let total = 0;
-        container.innerHTML = cart.map(item => {
-            total += item.price;
-            return `
-                <div class="cart-item">
-                    <span><strong>${item.name}</strong> (مقاس ${item.size}) - ${item.price} جنيه</span>
-                    <button class="remove-btn" onclick="removeFromCart(${item.cartId})">حذف</button>
-                </div>
-            `;
-        }).join("");
-        document.getElementById("total-price").innerText = الإجمالي: ${total} جنيه;
-    }
-
-    function sendWhatsApp() {
-        if (cart.length === 0) return alert("من فضلك اختر عمة واحدة على الأقل أولاً!");
-        const name = document.getElementById("cust-name").value.trim();
-        const phone = document.getElementById("cust-phone").value.trim();
-        const gov = document.getElementById("cust-gov").value.trim();
-        const address = document.getElementById("cust-address").value.trim();
-
-        if (!name || !phone || !gov || !address) return alert("من فضلك أكمل بيانات التوصيل كاملة.");
-
-        let msg = *طلب جديد من متجر حسام صنايعي عمم أزهرية*%0A%0A;
-        msg += *الاسم:* ${name}%0A*الموبايل:* ${phone}%0A*المحافظة:* ${gov}%0A*العنوان:* ${address}%0A%0A*الطلبات:*%0A;
-        let total = 0;
-        cart.forEach((item, i) => {
-            msg += ${i + 1}- ${item.name} (مقاس ${item.size}) = ${item.price} جنيه%0A;
-            total += item.price;
-        });
-        msg += %0A*الإجمالي المطلوب:* ${total} جنيه;
-
-        window.open(https://wa.me{WHATSAPP_NUMBER}?text=${msg}, "_blank");
-    }
-
-    renderProducts();
-</script>
-</body>
